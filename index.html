@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Curso Ponta dos Pés no TEA</title>
+<meta name="description" content="Curso online de fisioterapia pediátrica: avaliação e intervenção da marcha na ponta dos pés em crianças autistas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Fira+Sans:wght@400;500;700&family=Dancing+Script:wght@700&family=Cinzel:wght@600;700&display=swap">
+<style>
+/* Layout: página de vendas em faixas brancas, a fita do TEA como fio condutor; cada seção marcada por uma das quatro cores */
+:root{
+  --bg:#FFFFFF; --soft:#F7F8FA; --ink:#1B2A4A; --muted:#566079; --line:#E2E8F2;
+  --red:#E5484D; --yellow:#F2B21F; --green:#2FA36B; --blue:#2E6FD8; --yellow-ink:#8A5C00;
+  --display:"Playfair Display",Georgia,serif; --body:"Fira Sans",system-ui,sans-serif;
+  --script:"Dancing Script","Brush Script MT",cursive; --deco:"Cinzel","Trajan Pro",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body);font-size:17px;line-height:1.6;padding-top:env(safe-area-inset-top,0px)}
+h1,h2,h3{font-family:var(--display);font-weight:700;line-height:1.15;margin:0;text-wrap:balance}
+h1{font-size:clamp(36px,6vw,58px)}
+h2{font-size:clamp(28px,4vw,40px)}
+h3{font-size:20px}
+p{margin:0}
+.band{padding-block:72px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:1080px;margin:0 auto;display:flex;flex-direction:column;gap:28px}
+.soft{background:var(--soft)}
+.k{font-size:13px;font-weight:700;letter-spacing:.1em;text-transform:uppercase}
+.lead{font-size:19px;color:var(--muted);max-width:62ch}
+.center{text-align:center;align-items:center}
+.cord{height:6px;background:linear-gradient(90deg,var(--red) 0 25%,var(--yellow) 25% 50%,var(--green) 50% 75%,var(--blue) 75% 100%)}
+.btn{display:inline-block;background:var(--yellow);color:var(--ink);text-decoration:none;font-weight:700;font-size:18px;padding:16px 34px;border-radius:999px;border:2px solid var(--yellow)}
+.btn:hover{background:#FFC63D}
+.btn:focus-visible{outline:3px solid var(--blue);outline-offset:3px}
+.btn.ghost{background:transparent;border-color:var(--ink)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px;display:flex;flex-direction:column;gap:8px}
+.card p{color:var(--muted)}
+.ph{border:2px dashed var(--line);background:var(--soft);border-radius:22px;display:flex;align-items:center;justify-content:center;text-align:center;padding:24px;color:var(--muted)}
+
+/* hero */
+.hero{display:flex;flex-wrap:wrap;gap:44px;align-items:center}
+.hero>div:first-child{flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:20px}
+.hero .ph{flex:1 1 340px;min-height:340px}
+.hello{font-family:var(--script);font-size:30px;color:var(--red);line-height:1}
+.meta{display:flex;flex-wrap:wrap;gap:10px}
+.meta span{background:var(--soft);border:1px solid var(--line);border-radius:999px;padding:6px 14px;font-size:15px}
+.ribbon{width:64px;height:auto}
+
+/* pain */
+.pain .card{border-top:4px solid var(--red)}
+.who .card:nth-child(1){border-top:4px solid var(--red)}.who .card:nth-child(2){border-top:4px solid var(--yellow)}.who .card:nth-child(3){border-top:4px solid var(--green)}.who .card:nth-child(4){border-top:4px solid var(--blue)}
+
+/* modules */
+.mods{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.mod{background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;display:flex;flex-direction:column;gap:12px}
+.mod ol{margin:0;padding-left:22px;color:var(--muted);display:flex;flex-direction:column;gap:4px}
+.pill{align-self:flex-start;font-size:13px;font-weight:700;border-radius:999px;padding:4px 12px;color:#fff}
+
+/* about */
+.about{display:flex;flex-wrap:wrap;gap:40px;align-items:center}
+.about .ph{flex:0 1 320px;min-height:360px}
+.about>div:last-child{flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:14px}
+
+/* bonus */
+.bonus .card{position:relative}
+.bonus .tag{align-self:flex-start;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--green)}
+
+/* offer */
+.offer{max-width:620px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:28px;overflow:hidden}
+.offer .in{padding:36px 30px;display:flex;flex-direction:column;gap:16px;align-items:center;text-align:center}
+.list{width:100%;display:flex;flex-direction:column;gap:8px;text-align:left}
+.list div{display:flex;justify-content:space-between;gap:14px;border-bottom:1px dashed var(--line);padding-bottom:8px}
+.list b{color:var(--green)}
+.was{color:var(--muted);text-decoration:line-through;font-size:18px}
+.price{font-family:var(--deco);font-size:clamp(52px,9vw,72px);font-weight:700;line-height:1;font-variant-numeric:tabular-nums}
+.launch{background:#FFF6DD;color:var(--yellow-ink);font-weight:700;border-radius:999px;padding:6px 16px;font-size:15px}
+.guar{display:flex;gap:14px;align-items:center;background:var(--soft);border-radius:16px;padding:14px 18px;text-align:left}
+.seal{flex:0 0 58px;height:58px;border-radius:50%;border:3px solid var(--green);color:var(--green);font-family:var(--deco);font-weight:700;display:flex;align-items:center;justify-content:center;font-size:22px}
+
+/* faq */
+details{background:#fff;border:1px solid var(--line);border-radius:14px}
+summary{cursor:pointer;padding:18px 22px;font-weight:700;font-size:17px}
+summary:focus-visible{outline:3px solid var(--blue);outline-offset:-3px;border-radius:14px}
+details p{padding:0 22px 18px;color:var(--muted)}
+.faq{display:flex;flex-direction:column;gap:10px;width:100%;max-width:780px;margin:0 auto}
+
+footer{text-align:center;font-size:14px;color:var(--muted);padding-block:32px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-bottom:calc(32px + env(safe-area-inset-bottom,0px))}
+</style>
+</head>
+<body>
+<div class="cord" aria-hidden="true"></div>
+
+<header class="band">
+<div class="wrap hero">
+<div>
+<svg class="ribbon" viewBox="0 0 100 130" role="img" aria-label="Fita da conscientização do autismo">
+<defs><clipPath id="rb"><path d="M50 8 C28 8 24 34 36 54 L14 118 L30 122 L50 70 L70 122 L86 118 L64 54 C76 34 72 8 50 8Z M50 24 C60 24 60 38 50 52 C40 38 40 24 50 24Z" fill-rule="evenodd"/></clipPath></defs>
+<g clip-path="url(#rb)"><rect x="0" width="25" height="130" fill="#E5484D"/><rect x="25" width="25" height="130" fill="#F2B21F"/><rect x="50" width="25" height="130" fill="#2FA36B"/><rect x="75" width="25" height="130" fill="#2E6FD8"/></g></svg>
+<p class="hello">Curso online de fisioterapia pediátrica</p>
+<h1>Ponta dos pés no Transtorno do Espectro Autista</h1>
+<p class="lead">Saia sabendo avaliar a marcha na ponta dos pés e montar o plano de intervenção da criança, com aulas teóricas e práticas gravadas em consultório.</p>
+<div style="display:flex;flex-wrap:wrap;gap:12px;align-items:center">
+<a class="btn" href="#inscricao">Quero me inscrever</a>
+<a class="btn ghost" href="#conteudo">Ver o conteúdo</a>
+</div>
+<div class="meta"><span>10 aulas</span><span>Teoria e prática</span><span>Certificado</span><span>Acesso pela Hotmart</span></div>
+</div>
+<div class="ph">[Vídeo de apresentação da Gabi, 1 a 2 minutos]</div>
+</div>
+</header>
+
+<section class="band soft pain">
+<div class="wrap">
+<p class="k" style="color:var(--red)">Você se identifica?</p>
+<h2>Quando a criança anda na ponta dos pés, as dúvidas aparecem</h2>
+<div class="grid">
+<div class="card"><h3>“Por onde começo a avaliação?”</h3><p>Falta um roteiro claro para observar a marcha e registrar o que importa.</p></div>
+<div class="card"><h3>“Que exercício escolher?”</h3><p>Muitas opções e pouca segurança sobre o que faz sentido para cada criança.</p></div>
+<div class="card"><h3>“Como orientar a família?”</h3><p>Os pais querem ajudar em casa e não sabem por onde começar.</p></div>
+</div>
+</div>
+</section>
+
+<section class="band who">
+<div class="wrap">
+<p class="k" style="color:var(--yellow-ink)">Para quem é</p>
+<h2>Feito para quatro perfis</h2>
+<div class="grid">
+<div class="card"><h3>Fisioterapeutas recém-formados</h3><p>Que querem começar a atender crianças com TEA com segurança.</p></div>
+<div class="card"><h3>Fisios em transição de área</h3><p>Que desejam migrar para a pediatria e o neurodesenvolvimento.</p></div>
+<div class="card"><h3>Quem quer dominar a técnica</h3><p>Profissionais que buscam aprofundar a intervenção na ponta dos pés.</p></div>
+<div class="card"><h3>Pais de crianças autistas</h3><p>Que querem entender o que acontece e como apoiar em casa.</p></div>
+</div>
+</div>
+</section>
+
+<section class="band soft" id="conteudo">
+<div class="wrap">
+<p class="k" style="color:var(--green)">Conteúdo</p>
+<h2>10 aulas, da teoria à prática</h2>
+<p class="lead">Aulas de cerca de 20 minutos: a parte teórica gravada na mesa e a parte prática demonstrada no tatame.</p>
+<div class="mods">
+<div class="mod"><span class="pill" style="background:var(--blue)">Módulo 1 · Teoria</span><h3>Entender e avaliar</h3>
+<ol><li>[Título da aula 1]</li><li>[Título da aula 2]</li><li>[Título da aula 3]</li><li>[Título da aula 4]</li><li>[Título da aula 5]</li></ol></div>
+<div class="mod"><span class="pill" style="background:var(--green)">Módulo 2 · Prática</span><h3>Intervir no tatame</h3>
+<ol start="6"><li>[Título da aula 6]</li><li>[Título da aula 7]</li><li>[Título da aula 8]</li><li>[Título da aula 9]</li><li>[Título da aula 10]</li></ol></div>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap about">
+<div class="ph">[Foto da Gabi]</div>
+<div>
+<p class="k" style="color:var(--blue)">Sua professora</p>
+<h2>Gabi [sobrenome]</h2>
+<p style="font-size:18px;color:var(--muted)">Fisioterapeuta pediátrica · CREFITO [número]</p>
+<p>[Formação, especializações e tempo de atuação com crianças com TEA. Em 3 ou 4 frases, por que ela criou este curso.]</p>
+<p style="color:var(--muted)">[@instagram] · [número de seguidores]</p>
+</div>
+</div>
+</section>
+
+<section class="band soft bonus">
+<div class="wrap">
+<p class="k" style="color:var(--green)">Bônus</p>
+<h2>Além das aulas, você recebe</h2>
+<div class="grid">
+<div class="card"><span class="tag">Para fisioterapeutas</span><h3>Ficha de avaliação pronta</h3><p>Modelo para imprimir e usar no consultório.</p></div>
+<div class="card"><span class="tag">Para as famílias</span><h3>Guia de brincadeiras em PDF</h3><p>Exercícios ilustrados para fazer em casa.</p></div>
+<div class="card"><span class="tag">Para todos</span><h3>Material de apoio</h3><p>Resumo de cada aula para consultar depois.</p></div>
+<div class="card"><span class="tag">Só no lançamento</span><h3>[Encontro ao vivo de dúvidas]</h3><p>[Uma aula ao vivo com a Gabi para os primeiros alunos.]</p></div>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap">
+<p class="k" style="color:var(--red)">Depoimentos</p>
+<h2>Quem já conhece o trabalho da Gabi</h2>
+<div class="grid">
+<div class="card"><p>[Depoimento real de um colega fisioterapeuta]</p><p style="font-weight:700;color:var(--ink)">[Nome, profissão]</p></div>
+<div class="card"><p>[Depoimento real de uma mãe ou pai, com autorização]</p><p style="font-weight:700;color:var(--ink)">[Nome]</p></div>
+<div class="card"><p>[Print de comentário do Instagram]</p><p style="font-weight:700;color:var(--ink)">[@perfil]</p></div>
+</div>
+</div>
+</section>
+
+<section class="band soft" id="inscricao">
+<div class="offer">
+<div class="cord" aria-hidden="true"></div>
+<div class="in">
+<p class="k" style="color:var(--green)">Inscrição</p>
+<h2>Curso completo + bônus</h2>
+<div class="list">
+<div><span>10 aulas teóricas e práticas</span><b>✓</b></div>
+<div><span>Ficha de avaliação pronta</span><b>✓</b></div>
+<div><span>Guia de brincadeiras para as famílias (PDF)</span><b>✓</b></div>
+<div><span>Material de apoio das aulas</span><b>✓</b></div>
+<div><span>Certificado de conclusão</span><b>✓</b></div>
+</div>
+<span class="launch">Preço de lançamento · primeiros [7] dias</span>
+<p class="was">de R$ 297</p>
+<p class="price">R$ [247]</p>
+<p style="color:var(--muted)">ou em até [X]x no cartão pela Hotmart</p>
+<!-- Troque o link abaixo pelo link de checkout da Hotmart -->
+<a class="btn" href="https://pay.hotmart.com/SEU-LINK">Garantir minha vaga</a>
+<div class="guar"><span class="seal">7</span><p><b>Garantia de 7 dias.</b> Se o curso não for para você, a Hotmart devolve 100% do valor.</p></div>
+</div>
+</div>
+</section>
+
+<section class="band">
+<div class="wrap center">
+<p class="k" style="color:var(--blue)">Dúvidas frequentes</p>
+<h2>Perguntas comuns</h2>
+<div class="faq">
+<details><summary>Como acesso o curso?</summary><p>Após a compra, você recebe por e-mail o acesso à área de membros da Hotmart.</p></details>
+<details><summary>Por quanto tempo tenho acesso?</summary><p>[Definir: 1 ano ou acesso vitalício]</p></details>
+<details><summary>Sou pai ou mãe, não fisioterapeuta. O curso serve para mim?</summary><p>Sim. Há conteúdo e bônus pensados para as famílias entenderem e apoiarem a criança em casa.</p></details>
+<details><summary>Tem certificado?</summary><p>Sim, ao concluir as aulas você emite o certificado pela Hotmart, com a carga horária do curso.</p></details>
+<details><summary>E se eu não gostar?</summary><p>Você tem 7 dias de garantia para pedir o reembolso integral.</p></details>
+</div>
+</div>
+</section>
+
+<div class="cord" aria-hidden="true"></div>
+<footer>
+<p>Este curso tem caráter educativo e não substitui a avaliação individual por um profissional.</p>
+<p style="margin-top:6px">© 2026 Gabi [sobrenome] · Fisioterapia Pediátrica · [@instagram]</p>
+</footer>
+</body>
+</html>
